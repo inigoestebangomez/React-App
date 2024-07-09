@@ -1,12 +1,17 @@
 
 import './App.css'
+import Footer from './components/Footer'
+import Navbar from './components/Navbar'
+import Sidebar from './components/Sidebar'
 
 function App() {
 
 
   return (
     <>
-    <h1>HOLA MUNDO!</h1>
+    <Navbar />
+    <Sidebar />
+    <Footer />
     </>
   )
 }

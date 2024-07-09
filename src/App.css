@@ -1,6 +1,36 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  max-width: auto;
+  margin: 15px; 
+  padding: 0.1rem;
   text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#logo {
+  height: 130px;
+}
+#menu_icono {
+  display: flex;
+  height: 30px;
+}
+.sidebar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #63A2A5;
+  color: white;
+  height: 40px;
+}
+.footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-top: 1000px;
+
 }
