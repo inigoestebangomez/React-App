@@ -2,6 +2,7 @@
 import './App.css'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
+import Products from './components/Products'
 import Sidebar from './components/Sidebar'
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
     <>
     <Navbar />
     <Sidebar />
+    <Products />
     <Footer />
     </>
   )
