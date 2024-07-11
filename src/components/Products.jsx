@@ -1,6 +1,7 @@
 import { useState } from "react";
 import productsJSON from "../assets/product-list.json";
 import ProductCard from "./ProductCard";
+import { Link } from "react-router-dom";
 
 function Products() {
   const [allProducts, setAllProducts] = useState(productsJSON);
@@ -14,7 +15,12 @@ function Products() {
   return (
     <div>
       {allProducts.map((eachProduct, eachIndex) => {
-        return <ProductCard productData={eachProduct} handleDelete={handleDelete} index={eachIndex}/>;
+        return(
+          // <Link to={`/productItems/${eachProduct.id}`}> 
+          // </Link>
+          <ProductCard productData={eachProduct} handleDelete={handleDelete} index={eachIndex}/>
+        )
+      
       })}
     </div>
   );

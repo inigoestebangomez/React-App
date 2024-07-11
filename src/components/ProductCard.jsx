@@ -1,18 +1,16 @@
+import { Link } from "react-router-dom";
+
 function ProductCard(props) {
-  //   const handleDelete = (indexDelete) => {
-  //     const clone = JSON.parse(JSON.stringify(product));
-  //     clone.splice(indexDelete, 1);
-
-  //     setProduct(clone);
-  //   };
-
+ 
   return (
     <div className="product-screen">
       <div className="images-product">
         {/* <img src={eachProduct.images} alt="" />  */}
 
         <div className="data-product">
-          <h3>{props.productData.title}</h3>
+          <Link to={`/product-items/${props.productData.id}`}>
+            <h3>{props.productData.title}</h3>
+          </Link>
           <p>{props.productData.description}</p>
           <p>{props.productData.price} €</p>
           <p>
@@ -26,7 +24,10 @@ function ProductCard(props) {
             <span>📈</span>
           )}
           <p>{props.productData.category}</p>
-          <button onClick={ () => props.handleDelete(props.index) }>Delete</button>
+
+          <button onClick={() => props.handleDelete(props.index)}>
+            Delete
+          </button>
         </div>
       </div>
     </div>
