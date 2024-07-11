@@ -37,5 +37,14 @@
 .data-product{
   color: black;
   display: flex;
-  
+  border: 1px solid black;
+  width: 200px;
+  margin: 15px;
+  flex-direction: column;
+}
+.product-screen {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
 }
