@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 function ProductCard(props) {
  
   return (
-    <div className="product-screen">
+    <div>
       <div className="images-product">
-        {/* <img src={eachProduct.images} alt="" />  */}
 
         <div className="data-product">
+        <img src={props.productData.thumbnail} alt="imagen" /> 
           <Link to={`/product-items/${props.productData.id}`}>
             <h3>{props.productData.title}</h3>
           </Link>

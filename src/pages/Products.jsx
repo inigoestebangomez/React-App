@@ -16,6 +16,7 @@ function Products() {
   return (
     <div>
       <AddForm setAllProducts={setAllProducts} />
+      <div className="product-screen">
       {allProducts.map((eachProduct, eachIndex) => {
         return (
           <ProductCard
@@ -26,6 +27,7 @@ function Products() {
           />
         );
       })}
+      </div>
     </div>
   );
 }

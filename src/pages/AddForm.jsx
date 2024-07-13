@@ -44,13 +44,13 @@ export default function AddForm() {
 
   return (
 
-    <div className="add-form container">
+    <div className="title-form">
       
       <h3>Añadir productos a venta</h3>
 
       <form onSubmit={ handleAddProduct }>
-
-        <div>
+    <div className="form-container">
+        <div >
           <label htmlFor="id">iD: </label>
           <input type="number" name="id" onChange={ handleImputId } value={ id }/>
         </div>
@@ -94,8 +94,8 @@ export default function AddForm() {
           <label htmlFor="images">Images: </label>
           <input type="text" name="images" onChange={ handleImputImages } value= { images }/>
         </div>
-
-        <button>Add</button>
+        </div>
+        <button className="form-button">Add</button>
 
       </form>
 
