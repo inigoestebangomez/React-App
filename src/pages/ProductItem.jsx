@@ -1,37 +1,26 @@
 import { useParams } from "react-router-dom"
-import { Link } from "react-router-dom";
 import productsJSON from "../assets/product-list.json";
 
 function ProductItem() {
 
-  const {productId} = useParams()
-  console.log(productId)
-  const productProfile= productsJSON.find((eachProduct) => eachProduct.id === productId);
+  const { productDataId } = useParams();
+  console.log(productDataId);
+  const productProfile = productsJSON.find((eachProduct) => eachProduct.id.toString() === productDataId);
+  console.log(productProfile);
   return (
     <div>
         
-          <h3>{productProfile.title}</h3>
+          <h2>{productProfile.title}</h2>
           <p>{productProfile.description}</p>
-          <h4>{productProfile.price}</h4>
+          <h4>{productProfile.price}€</h4>
+          <h4>{productProfile.discountPercentage}%</h4>
+          <h4>{productProfile.stock}</h4>
+          <h4>{productProfile.brand}</h4>
+          <img src={productProfile.thumbnail} alt="producto" width= "300px"/>
           
     </div>
   )
 }
 
 export default ProductItem
-{/* /* "id": 1,
-"title": "iPhone 9",
-"description": "An apple mobile which is nothing like apple",
-"price": 549,
-"discountPercentage": 12.96,
-"rating": 4.69,
-"stock": 94,
-"brand": "Apple",
-"category": "smartphones",
-"thumbnail": "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
-"images": [
-  "https://cdn.dummyjson.com/product-images/1/1.jpg",
-  "https://cdn.dummyjson.com/product-images/1/2.jpg",
-  "https://cdn.dummyjson.com/product-images/1/3.jpg",
-  "https://cdn.dummyjson.com/product-images/1/4.jpg",
-  "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg" */}
+

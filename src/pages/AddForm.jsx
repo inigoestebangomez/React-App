@@ -1,6 +1,7 @@
 import { useState } from "react"
 
-export default function AddForm() {
+
+export default function AddForm(props) {
     const [ id, setId ] = useState ("")
     const [ title, setTitle ] = useState ("")
     const [ description, setDescription ] = useState ("")
@@ -28,7 +29,7 @@ export default function AddForm() {
     const handleAddProduct = (event) => {
         event.preventDefault()
         const newProduct = {
-            id: id,
+            id: props.allProducts.length + 1,
             title: title,
             description: description,
             price: price,
@@ -40,6 +41,21 @@ export default function AddForm() {
             thumbnail: thumbnail,
             images: images
         }
+
+        props.setAllProducts([...props.allProducts, newProduct]);
+        setId("")
+        setTitle("")
+        setDescription("")
+        setPrice(0)
+        setDiscountPercentage(0)
+        setRating(0)
+        setStock(0)
+        setBrand("")
+        setCategory("")
+        setThumbnail("")
+        setImages("")
+
+
     }
 
   return (
@@ -50,10 +66,10 @@ export default function AddForm() {
 
       <form onSubmit={ handleAddProduct }>
     <div className="form-container">
-        <div >
+        {/* <div >
           <label htmlFor="id">iD: </label>
           <input type="number" name="id" onChange={ handleImputId } value={ id }/>
-        </div>
+        </div> */}
         <div>
           <label htmlFor="title">Title: </label>
           <input type="text" name="title" onChange={ handleImputTitle } value= { title }/>

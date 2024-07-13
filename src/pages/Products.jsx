@@ -15,7 +15,7 @@ function Products() {
 
   return (
     <div>
-      <AddForm setAllProducts={setAllProducts} />
+      <AddForm allProducts={allProducts} setAllProducts={setAllProducts} />
       <div className="product-screen">
       {allProducts.map((eachProduct, eachIndex) => {
         return (
