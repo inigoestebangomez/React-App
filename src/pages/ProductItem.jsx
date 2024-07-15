@@ -1,11 +1,9 @@
-import { useParams } from "react-router-dom"
-import productsJSON from "../assets/product-list.json";
+import { useParams, Link } from "react-router-dom"
 
-function ProductItem() {
+function ProductItem(props) {
 
   const { productDataId } = useParams();
-  console.log(productDataId);
-  const productProfile = productsJSON.find((eachProduct) => eachProduct.id.toString() === productDataId);
+  const productProfile = props.allProducts.find((eachProduct) => eachProduct.id.toString() === productDataId);
   console.log(productProfile);
   return (
     <div>
@@ -17,7 +15,7 @@ function ProductItem() {
           <h4>{productProfile.stock}</h4>
           <h4>{productProfile.brand}</h4>
           <img src={productProfile.thumbnail} alt="producto" width= "300px"/>
-          
+         <Link to={`/product-id-edit/${productDataId}`}><button>Ir a Editar</button> </Link>
     </div>
   )
 }
