@@ -1,11 +1,12 @@
 import React from 'react'
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import { useState } from "react"
 
 function ProductIdEdit(props) {
 
     const { productDataId } = useParams()
     const productProfile = props.allProducts.find((eachProduct) => eachProduct.id.toString() === productDataId);
+    const navigate = useNavigate();
     
     const [ id, setId ] = useState ("")
     const [ title, setTitle ] = useState (productProfile.title)
@@ -16,8 +17,8 @@ function ProductIdEdit(props) {
     const [ stock, setStock ] = useState (productProfile.stock)
     const [ brand, setBrand ] = useState (productProfile.brand)
     const [ category, setCategory ] = useState (productProfile.category)
-    const [ thumbnail, setThumbnail ] = useState ("")
-    const [ images, setImages ] = useState ("")
+    const [ thumbnail, setThumbnail ] = useState (productProfile.thumbnail)
+    const [ images, setImages ] = useState (productProfile.images)
 
     const handleImputTitle = (event) => setTitle(event.target.value)
     const handleImputDescription = (event) => setDescription(event.target.value)
@@ -52,6 +53,7 @@ function ProductIdEdit(props) {
                 product.id.toString() === productDataId ? editedProduct : product
             )
         );
+        navigate(`/product-items/${productDataId}`);
     }
 
  

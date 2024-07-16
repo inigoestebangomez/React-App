@@ -8,7 +8,7 @@ function Products(props) {
     const clone = JSON.parse(JSON.stringify(props.allProducts));
     clone.splice(indexDelete, 1);
 
-    setAllProducts(clone);
+    props.setAllProducts(clone);
   }
 
   return (
