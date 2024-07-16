@@ -24,7 +24,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
         <Route path="/about" element={<About />} />
         <Route path="/product-items/:productDataId" element={<ProductItem allProducts={allProducts} setAllProducts={setAllProducts}/>} />
-        <Route path="/product-id-edit/:productDataId" element={<ProductIdEdit/>} />
+        <Route path="/product-id-edit/:productDataId" element={<ProductIdEdit allProducts={allProducts} setAllProducts={setAllProducts}/>} />
   
       </Routes>
       <Footer />
